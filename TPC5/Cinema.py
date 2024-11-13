@@ -1,8 +1,8 @@
 #TPC 5
+## Data:2024-09-30
+## Autor: Dinis Pereira a107276
 
-
-#.strip é tirar os espaços no input
-#.split é aquilo de teres lista dentro de listas (1,2,(1,2,3)) que passa para 1 2 3 4 5
+#Este TPC consiste em criar e gerir um cinema e os lugares livres/comprados dentro das suas salas.
 
 import random 
 
