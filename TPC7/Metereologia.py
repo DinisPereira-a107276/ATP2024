@@ -72,7 +72,7 @@ def maxPeriodoCalor(tabMeteo, p):
     contador=0
     for *_, precip in tabMeteo:
         if precip<p:
-            contador=contador+1
+            contador += 1
         else:
             if contador > consecutivos:
                 consecutivos = contador
@@ -100,7 +100,7 @@ def menu():
     0. Sair da aplicação
           """)
 
-    opcao=int(input("Qual opção deseja selecionar?"))
+    opcao=int(input("Qual opção deseja selecionar? "))
     return opcao
 
 op=menu()
