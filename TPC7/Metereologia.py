@@ -5,8 +5,26 @@
 #Este TPC consiste em juntar tudo o que fizemos na aula em uma aplicação.
 
 #TabMeteo = [(Data,TempMin,TempMax,Precipitacao)]
+tabMeteo1=[]
 
-tabMeteo1 = [((2022,1,20), 2, 16, 0),((2022,1,21), 1, 13, 0.2), ((2022,1,22), 7, 17, 0.01)]
+def novo():
+    tabMeteo1 = []
+
+    quantosdias = int(input("Quantos dias vai ter a tua metereologia? "))
+    qualano = int(input("Qual o ano? "))
+    qualmes = int(input("Qual o mês? "))
+    qualdia = int(input("Em que dia vais querer começar? "))
+
+    for n in range(quantosdias):
+        diaatual = qualdia + n  # Calcula o dia atual
+        Tmin = int(input(f"Qual a temperatura mínima do dia {diaatual}? "))
+        Tmax = int(input(f"Qual a temperatura máxima do dia {diaatual}? "))
+        Prec = int(input(f"Qual a precipitação do dia {diaatual}? "))
+        tabMeteo1.append(((qualano, qualmes, diaatual), Tmin, Tmax, Prec))
+
+    print(tabMeteo1)
+
+novo()
 
 def medias(tabMeteo):
     res = []
@@ -96,7 +114,8 @@ def menu():
     5. Calcula a amplitude térmica
     6. O dia em que aprecipitação teve valor máximo
     7. Tabela metereológica e limite p e devolve os dias em que a precipitação foi superior a p
-    8.Retorna o maior número consecutivo de dias com precipitação abaixo de p
+    8. Retorna o maior número consecutivo de dias com precipitação abaixo de p
+    9. Criar uma nova tabela
     0. Sair da aplicação
           """)
 
@@ -120,8 +139,12 @@ while op!=0:
     elif op==6:
         print(maxChuva(tabMeteo1))
     elif op==7:
-        print(diasChuvosos(tabMeteo1, 0.1))
+        p=input("Escolhe um valor p ")
+        print(diasChuvosos(tabMeteo1, p))
     elif op==8:
-        print(maxPeriodoCalor(tabMeteo1, 0.1))
+        p=input("Escolhe um valor p ")
+        print(maxPeriodoCalor(tabMeteo1, p))
+    elif op==9:
+        novo()
     op=menu()
 print("Adeus.")
